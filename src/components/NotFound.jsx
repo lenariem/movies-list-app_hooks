@@ -10,7 +10,7 @@ export default function NotFound() {
            {/*  <CatNotFound style={{width: '450px'}}/> */}
             <img style={{width: '450px'}} src ={CatNotFound} alt="cat in cinema"/>
             <br /><br />
-            <Link className="btn" to="/">Go back to home page</Link>
+            <Link className="btn" to="/">Go back to home page</Link> 
         </div>
     )
 }

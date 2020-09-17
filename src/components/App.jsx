@@ -1,17 +1,12 @@
 import React, { useState } from "react";
 import randomstring from "randomstring";
-import {BrowserRouter,Switch,Route} from "react-router-dom";
 
-import Navigation from "./Navigation";
 import Header from "./Header";
 import SearchPanel from "./SearchPanel";
 import PostFilter from "./PostFilter";
 import PostList from "./PostList";
 import AddForm from "./AddForm";
-import NotFound from "./NotFound";
-import Catalog from "./Catalog";
-
-
+import Navigation from "./Navigation"
 
 import "../css/App.css";
 
@@ -23,10 +18,12 @@ export default function App() {
         { label: "Tenet (new,cinema)", important: true, like: false, id: randomstring.generate(5) }
       ]);
 
+
   const [term, setTerm] = useState('');
   
   const [filter, setFilter] = useState('all');
   
+
   const onDelete = (id) => {
     const updatedItems = movies.filter(item => item.id !== id);
     setMovies(updatedItems);
@@ -108,12 +105,9 @@ export default function App() {
   const visiblePosts = filterPost(searchPost(movies, term), filter)
 
     return (
-      <BrowserRouter>
+      
       <div className="app">
-      <Navigation />
-          <Switch>
-          
-            <Route path="/" exact>
+          <Navigation />
               <Header 
                 liked={liked}
                 watched={watched}
@@ -135,12 +129,8 @@ export default function App() {
               <AddForm 
                 onAdd={onAdd}
               />
-              </Route>
-              <Route exact path="/catalog" component={Catalog} />
-              <Route component={NotFound} />
-            </Switch>
         </div>
-      </BrowserRouter>
+    
     );
   }
 

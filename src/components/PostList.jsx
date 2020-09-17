@@ -6,6 +6,7 @@ import "../css/PostList.css";
 
 export default function PostList({ posts, onDelete, onToggleImportant, onToggleLiked }) {
     const elements = posts.map((item) => {
+        
         const { id, ...itemProps } = item;
         return (
         <li className="list-group-item" key={id}>
