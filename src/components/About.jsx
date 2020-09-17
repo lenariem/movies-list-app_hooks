@@ -31,7 +31,7 @@ export default function NotFound() {
             <br />
             <br />
 
-            <a href = "mailto: abc@example.com">To contact me <span>myemail@google.com</span></a>
+            
             </div>
         );
 }

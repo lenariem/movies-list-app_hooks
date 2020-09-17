@@ -1,7 +1,7 @@
 import React from "react"
 import {BrowserRouter,Switch,Route} from "react-router-dom";
 import App from "./App"
-import Catalog from "./Catalog"
+import Help from "./Help"
 import About from "./About"
 import NotFound from "./NotFound"
 
@@ -10,8 +10,8 @@ const Routes = () => (
     <BrowserRouter>
         <Switch>
             <Route exact path = "/" component={App} />
-            <Route exact path ="/catalog" component ={Catalog} /> 
             <Route exact path ="/about" component ={About} />
+            <Route exact path ="/help" component ={Help} /> 
             <Route component = {NotFound} /> 
         </Switch>
     </BrowserRouter>

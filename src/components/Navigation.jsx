@@ -6,8 +6,8 @@ export default function Navigation() {
     return (
         <nav>
             <div className="menu">
-                <Link to="/catalog" className="catalogLink">Catalog</Link>
                 <Link to="/about" className="aboutLink">About</Link>
+                <Link to="/help" className="helpLink">Help</Link>
             </div>
         </nav>
     )

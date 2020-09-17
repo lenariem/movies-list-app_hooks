@@ -132,7 +132,7 @@ export default function App() {
               <AddForm 
                 onAdd={onAdd}
               />
-            
+              <Catalog onAdd={onAdd}/>
         </div>
       
     );
