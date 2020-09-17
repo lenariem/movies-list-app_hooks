@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import randomstring from "randomstring";
+import {BrowserRouter,Switch,Route} from "react-router-dom";
 
+import Navigation from "./Navigation";
 import Header from "./Header";
 import SearchPanel from "./SearchPanel";
 import PostFilter from "./PostFilter";
 import PostList from "./PostList";
 import AddForm from "./AddForm";
+import NotFound from "./NotFound";
+import Catalog from "./Catalog";
+
+
 
 import "../css/App.css";
 
@@ -102,29 +108,40 @@ export default function App() {
   const visiblePosts = filterPost(searchPost(movies, term), filter)
 
     return (
+      <BrowserRouter>
       <div className="app">
-        <Header 
-          liked={liked}
-          watched={watched}
-          allPosts={allPosts}
-        />
-        <div className="search-panel d-flex">
-          <SearchPanel onUpdateSearch={onUpdateSearch}/>
-          <PostFilter 
-            filter={filter}
-            onFilterSelect={onFilterSelect}
-          />
+      <Navigation />
+          <Switch>
+          
+            <Route path="/" exact>
+              <Header 
+                liked={liked}
+                watched={watched}
+                allPosts={allPosts}
+              />
+              <div className="search-panel d-flex">
+                <SearchPanel onUpdateSearch={onUpdateSearch}/>
+                <PostFilter 
+                  filter={filter}
+                  onFilterSelect={onFilterSelect}
+                />
+              </div>
+              <PostList 
+                posts={visiblePosts} 
+                onDelete={onDelete} 
+                onToggleImportant={onToggleImportant}
+                onToggleLiked={onToggleLiked}
+              />
+              <AddForm 
+                onAdd={onAdd}
+              />
+              </Route>
+              <Route exact path="/catalog" component={Catalog} />
+              <Route component={NotFound} />
+            </Switch>
         </div>
-        <PostList 
-          posts={visiblePosts} 
-          onDelete={onDelete} 
-          onToggleImportant={onToggleImportant}
-          onToggleLiked={onToggleLiked}
-        />
-        <AddForm 
-          onAdd={onAdd}
-        />
-      </div>
+      </BrowserRouter>
     );
   }
 
+  
