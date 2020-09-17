@@ -7,13 +7,14 @@ import PostFilter from "./PostFilter";
 import PostList from "./PostList";
 import AddForm from "./AddForm";
 import Navigation from "./Navigation"
+import Catalog from "./Catalog"
 
 import "../css/App.css";
 
 export default function App() {
 
   const [movies, setMovies] = useState([
-        {label: "Titanic(Netflix)", important: false, like: false, id: randomstring.generate(5),},
+        { label: "Forest Gump (Netflix)", important: false, like: false, id: randomstring.generate(5),},
         { label: "Inception (advice from Anna)", important: true, like: false, id: randomstring.generate(5) },
         { label: "Tenet (new,cinema)", important: true, like: false, id: randomstring.generate(5) }
       ]);
@@ -41,6 +42,8 @@ export default function App() {
         setMovies([...movies, newItem]);
     }
   }
+
+  
 
   const onToggleImportant = (id) => {
     const updatedMovies = movies.map(item => {
@@ -107,7 +110,7 @@ export default function App() {
     return (
       
       <div className="app">
-          <Navigation />
+          <Navigation/>
               <Header 
                 liked={liked}
                 watched={watched}
@@ -129,8 +132,9 @@ export default function App() {
               <AddForm 
                 onAdd={onAdd}
               />
+            
         </div>
-    
+      
     );
   }
 

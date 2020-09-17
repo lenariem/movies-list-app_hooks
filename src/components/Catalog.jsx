@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 import { Link } from "react-router-dom";
-import logo from "../img/cat2.jpg";
-import movieDB from "./movieDB.json"
+import logo from "../img/cat2.jpg"; 
+import movieDB from "./data/movieDB.json"
 
-export default function Catalog() {
+
+export default function Catalog( ) {
     /*  const [posts, setPosts] = useState([]);
 
     const fetchDatas = async () => {
@@ -18,7 +19,7 @@ export default function Catalog() {
         fetchDatas();
     }, []); */
 
-    
+
     const datas = movieDB.map(item => {
         return (
             <div className="productCard" key={item.title}>
@@ -28,7 +29,7 @@ export default function Catalog() {
             <div className="img-card">
             <img src={item.poster} alt="movie item" className="movie-img"/>
             </div>
-           <button className="add-btn" /* onClick={()=> onAdd(item.title)} */>Add to your movie List</button> 
+            <button className="add-btn" /* onClick={onAdd(item.title)} */>Add to your movie List</button> 
         </div>
         );
     });
@@ -39,12 +40,12 @@ export default function Catalog() {
             <Link to="/">
             <img src={logo} alt="logo" className="img_Logo" title="back to home page"/>
             </Link>
-        </div>
+        </div> 
         <div className="catalogHeader">
             <h2>Movie ideas for you</h2>
         </div>
         <div className="products_wrapper">
-            {datas}
+            {datas}//
         </div>
     </>
     )
