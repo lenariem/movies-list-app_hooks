@@ -23,12 +23,12 @@ export default function AddForm ({onAdd}) {
             <input 
                 type="text"
                 placeholder="What movie are you going to watch?"
-                className="form-control new-post-label"
+                className="form-control new-post-label font-italic"
                 onChange={onValueChange}
                 value={text}
             />
             <button 
-                className="btn-outline-secondary" 
+                className="btn btn-secondary" 
                 type="submit">
                 Add
             </button>

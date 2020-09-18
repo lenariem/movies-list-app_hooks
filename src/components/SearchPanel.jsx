@@ -12,7 +12,7 @@ export default function SearchPanel ({onUpdateSearch}){
     return (
         <div>
             <input 
-                className="form-control search-input"
+                className="form-control search-input font-italic"
                 type="text"
                 placeholder="Search in your posts..."
                 onChange={onUpdateSearchTerm}
