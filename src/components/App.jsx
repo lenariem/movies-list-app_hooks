@@ -8,6 +8,8 @@ import PostList from "./PostList";
 import AddForm from "./AddForm";
 
 import Catalog from "./Catalog"
+import Footer from "./Footer"
+
 
 import "../css/App.css";
 
@@ -133,6 +135,7 @@ export default function App() {
                 onAdd={onAdd}
               />
               <Catalog onAdd={onAdd}/>
+              <Footer />
         </div>
       
     );
