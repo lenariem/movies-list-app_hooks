@@ -6,7 +6,7 @@ import SearchPanel from "./SearchPanel";
 import PostFilter from "./PostFilter";
 import PostList from "./PostList";
 import AddForm from "./AddForm";
-import Navigation from "./Navigation"
+
 import Catalog from "./Catalog"
 
 import "../css/App.css";
@@ -39,7 +39,7 @@ export default function App() {
             like: false,
             id: randomstring.generate(5)
         };
-        setMovies([...movies, newItem]);
+          setMovies([...movies, newItem]);
     }
   }
 
@@ -110,7 +110,7 @@ export default function App() {
     return (
       
       <div className="app">
-          <Navigation/>
+          
               <Header 
                 liked={liked}
                 watched={watched}

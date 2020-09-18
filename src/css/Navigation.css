@@ -1,0 +1,17 @@
+ul {
+    margin-right: 2%;
+}
+
+.nav-link {
+    transition: 0.5s all;
+}
+
+.nav-link:hover {
+    color: #cf9312;
+}
+
+.nav-link:active {
+    color: #f5ab0b;
+    font-weight: 700;
+}
+

@@ -1,6 +1,6 @@
 [
     {
-        "title": "The Shawshank Redemption",
+        "title": "Shawshank Redemption",
         "year": "1994",
         "poster": "https://images-na.ssl-images-amazon.com/images/I/51B1ehfX4pL._AC_.jpg",
         "contentRating": "15",
@@ -237,7 +237,7 @@
         "posterurl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTkxMTA5OTAzMl5BMl5BanBnXkFtZTgwNjA5MDc3NjE@._V1_SY500_CR0,0,336,500_AL_.jpg"
     },
     {
-        "title": "The Lord of the Rings: The Return of the King",
+        "title": "The Lord of the Rings",
         "year": "2003",
         "genres": [
             "Adventure",
