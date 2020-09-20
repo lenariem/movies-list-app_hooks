@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../img/cat2.jpg";
+import "../css/About.css";
 
 export default function NotFound() {
     return (
-            <div>
+        <div className = "aboutPage">
             <div className="left">
                 <Link to="/">
                 <img
@@ -30,8 +31,6 @@ export default function NotFound() {
             </p>
             <br />
             <br />
-
-            
-            </div>
+        </div>
         );
 }

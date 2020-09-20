@@ -16,18 +16,14 @@ import "../css/App.css";
 export default function App() {
 
   const [movies, setMovies] = useState([
-        { label: "Forest Gump (Netflix)", important: false, like: false, id: randomstring.generate(5),},
+        { label: "Inception", important: false, like: false, id: randomstring.generate(5),},
         { label: "Inception (advice from Anna)", important: true, like: false, id: randomstring.generate(5) },
         { label: "Tenet (new,cinema)", important: true, like: false, id: randomstring.generate(5) }
       ]);
 
-
   const [term, setTerm] = useState('');
   
   const [filter, setFilter] = useState('all');
-
-  const [buttonText, setButtonText] = useState('Add to your movie List')
-  
 
   const onDelete = (id) => {
     const updatedItems = movies.filter(item => item.id !== id);
@@ -36,19 +32,20 @@ export default function App() {
 
 
   const onAdd = (body) => {
-    if(body.length > 0) {
-        const newItem = {
-            label: body,
-            important: true,
-            like: false,
-            id: randomstring.generate(5)
-        };
-          setMovies([...movies, newItem]);
-          setButtonText('Added');
+    if(body.length === 0) {
+      alert ('you added empty item')
+    } else if (movies.find(item => item.label === body)) {
+      alert('Movie already exists')
+    } else {
+      const newItem = {
+        label: body,
+        important: true,
+        like: false,
+        id: randomstring.generate(5)
+    } 
+    setMovies([...movies, newItem]);
     }
   }
-
-  
 
   const onToggleImportant = (id) => {
     const updatedMovies = movies.map(item => {
@@ -115,7 +112,7 @@ export default function App() {
 
     return (
       
-      <div className="app">
+      <div className="app" id="top">
           
               <Header 
                 liked={liked}
@@ -138,7 +135,7 @@ export default function App() {
               <AddForm 
                 onAdd={onAdd}
               />
-              <Catalog onAdd={onAdd} buttonText={buttonText}/>
+              <Catalog onAdd={onAdd} />
               <Footer />
         </div>
       

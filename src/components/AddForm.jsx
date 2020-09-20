@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../css/AddForm.css"
 
 export default function AddForm ({onAdd}) {
-    
+
     const [text, setText] = useState('');
 
     const onValueChange = (e) => {
