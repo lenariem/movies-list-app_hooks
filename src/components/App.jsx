@@ -25,6 +25,8 @@ export default function App() {
   const [term, setTerm] = useState('');
   
   const [filter, setFilter] = useState('all');
+
+  const [buttonText, setButtonText] = useState('Add to your movie List')
   
 
   const onDelete = (id) => {
@@ -42,6 +44,7 @@ export default function App() {
             id: randomstring.generate(5)
         };
           setMovies([...movies, newItem]);
+          setButtonText('Added');
     }
   }
 
@@ -57,6 +60,7 @@ export default function App() {
         }
     });
     setMovies(updatedMovies);
+    
   }
 
 
@@ -134,7 +138,7 @@ export default function App() {
               <AddForm 
                 onAdd={onAdd}
               />
-              <Catalog onAdd={onAdd}/>
+              <Catalog onAdd={onAdd} buttonText={buttonText}/>
               <Footer />
         </div>
       

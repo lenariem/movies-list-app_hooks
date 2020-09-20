@@ -3,7 +3,7 @@ import movieDB from "../data/movieDB.json"
 /* import "../css/Catalog.css" */
 
 
-export default function Catalog({onAdd}) {
+export default function Catalog({onAdd, buttonText}) {
     /*  const [posts, setPosts] = useState([]);
 
     const fetchDatas = async () => {
@@ -36,7 +36,7 @@ export default function Catalog({onAdd}) {
                     <h3 className="card-title text-center">{item.title}</h3>
                     <p className="card-text font-italic">Release year: {item.year}</p>
                     <p className="card-text font-italic">imdbRating: {item.imdbRating}</p>
-                    <button className="btn btn-secondary btn-lg btn-block" onClick={() => onAdd(item.title)}>Add to your movie List</button> 
+        <button className="btn btn-secondary btn-lg btn-block" onClick={() => onAdd(item.title)}>{buttonText}</button> 
                 </div>
             </div>
         </div>
