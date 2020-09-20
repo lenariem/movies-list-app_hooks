@@ -15,7 +15,7 @@ import "../css/App.css";
 export default function App() {
   const [movies, setMovies] = useState([
     {
-      label: "Inception",
+      label: "Forest Gump",
       important: false,
       like: false,
       id: randomstring.generate(5),
@@ -126,17 +126,16 @@ export default function App() {
         <SearchPanel onUpdateSearch={onUpdateSearch} />
         <PostFilter filter={filter} onFilterSelect={onFilterSelect} />
       </div>
-          <PostList
-            posts={visiblePosts}
-            onDelete={onDelete}
-            onToggleImportant={onToggleImportant}
-            onToggleLiked={onToggleLiked}
-          />
+      <PostList
+        posts={visiblePosts}
+        onDelete={onDelete}
+        onToggleImportant={onToggleImportant}
+        onToggleLiked={onToggleLiked}
+      />
       <AddForm onAdd={onAdd} />
       <div className="d-flex justify-content-center logoWrapper">
-      <img src={CatLogo} alt="logo" className="logoHome" />
+        <img src={CatLogo} alt="logo" className="logoHome" />
       </div>
-      {/*  <CatLogo className = "logoHome" /> */}
       <Catalog onAdd={onAdd} />
       <Footer />
     </div>

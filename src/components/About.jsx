@@ -5,32 +5,32 @@ import "../css/About.css";
 
 export default function NotFound() {
     return (
-        <div className = "aboutPage">
-            <div className="left">
-                <Link to="/">
-                <img
-                    src={logo}
-                    alt="logo"
-                    className="img_Logo"
-                    title="back to home page"
-                />
-                </Link>
-            </div>
-            <div className="aboutText">
+        <div className="aboutPage">
+        <div className="left">
+            <Link to="/">
+            <img
+                src={logo}
+                alt="logo"
+                className="img_Logo"
+                title="back to home page"
+            />
+            </Link>
+        </div>
+        <div className="aboutText">
             <h2>This app made by me</h2>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro vero
-                voluptatibus, ducimus dignissimos nulla debitis culpa dolorem, iure
-                itaque labore accusantium voluptas earum officiis quo delectus possimus
-                quod magnam? Ducimus illo commodi blanditiis et dolore praesentium
-                perferendis culpa asperiores dolores vel libero porro, labore eveniet
-                eaque sapiente nam? Quam dolorum error dolores minima hic animi dolore
-                eveniet sunt vero beatae amet reiciendis dolor, quisquam perspiciatis,
-                debitis et illo deleniti ipsa. Cum numquam a accusamus doloremque
-                accusantium molestiae delectus corrupti officiis totam tenetur, magni,
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro vero
+            voluptatibus, ducimus dignissimos nulla debitis culpa dolorem, iure
+            itaque labore accusantium voluptas earum officiis quo delectus
+            possimus quod magnam? Ducimus illo commodi blanditiis et dolore
+            praesentium perferendis culpa asperiores dolores vel libero porro,
+            labore eveniet eaque sapiente nam? Quam dolorum error dolores minima
+            hic animi dolore eveniet sunt vero beatae amet reiciendis dolor,
+            quisquam perspiciatis, debitis et illo deleniti ipsa. Cum numquam a
+            accusamus doloremque accusantium molestiae delectus corrupti officiis
+            totam tenetur, magni,
             </p>
-            </div>
-    
         </div>
-        );
+        </div>
+    );
 }
