@@ -16,7 +16,7 @@ export default function NotFound() {
                 />
                 </Link>
             </div>
-
+            <div className="aboutText">
             <h2>This app made by me</h2>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro vero
@@ -29,8 +29,8 @@ export default function NotFound() {
                 debitis et illo deleniti ipsa. Cum numquam a accusamus doloremque
                 accusantium molestiae delectus corrupti officiis totam tenetur, magni,
             </p>
-            <br />
-            <br />
+            </div>
+    
         </div>
         );
 }

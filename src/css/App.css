@@ -2,3 +2,12 @@
     margin: 0 auto;
     max-width: 800px;
 }
+
+.logoHome {
+    width: 330px;
+    height: 330px;
+}
+
+.logoWrapper {
+    margin: 2%;
+}
