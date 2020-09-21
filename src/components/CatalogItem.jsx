@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 
 export default function CatalogItem({poster,title,year,imdbRating,onAdd}) {
-    const [buttonText, setButtonText] = useState("Add to your movie List");
-    const [isDisabled, setIsDisabled] = useState(false);
+    
+    const [ isDisabled, setIsDisabled] = useState(false);
 
     const onMovieAdd = (title) => {
         onAdd(title);
-        setButtonText("Added");
         setIsDisabled(true);
     };
-
     return (
         <div className="card" style={{ padding: "2%" }}>
             <img
@@ -28,8 +26,8 @@ export default function CatalogItem({poster,title,year,imdbRating,onAdd}) {
                     onClick={() => {
                         onMovieAdd(title);
                     }}
-                >
-                {buttonText}
+                > 
+                    {isDisabled ? "Added" : "Add to your movie List"}
                 </button>
             </div>
         </div>

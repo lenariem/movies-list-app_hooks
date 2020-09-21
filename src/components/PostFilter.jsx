@@ -5,7 +5,6 @@ export default function PostFilter({filter, onFilterSelect}) {
         {name: 'all', label: 'All'},
         {name: 'like', label: 'Liked'},
         {name: 'important', label: 'Watched'}
-
     ]
 
     const filteredButtons = buttons.map(({name, label}) => {

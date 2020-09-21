@@ -8,20 +8,23 @@ import PostList from "./PostList";
 import AddForm from "./AddForm";
 import CatLogo from "../img/cat2.jpg";
 import Catalog from "./Catalog";
+import MyModal from "./Modal"
 import Footer from "./Footer";
+
+
 
 import "../css/App.css";
 
 export default function App() {
   const [movies, setMovies] = useState([
     {
-      label: "Forest Gump",
+      label: "Forest Gump (netflix)",
       important: false,
       like: false,
       id: randomstring.generate(5),
     },
     {
-      label: "Inception (advice from Anna)",
+      label: "Inception",
       important: true,
       like: false,
       id: randomstring.generate(5),
@@ -38,6 +41,10 @@ export default function App() {
 
   const [filter, setFilter] = useState("all");
 
+  const [modal, setModal] = useState(false);
+  const [modalText, setModalText] = useState();
+  const toggle = () => setModal(!modal);
+
   const onDelete = (id) => {
     const updatedItems = movies.filter((item) => item.id !== id);
     setMovies(updatedItems);
@@ -45,9 +52,12 @@ export default function App() {
 
   const onAdd = (body) => {
     if (body.length === 0) {
-      alert("you added empty item");
+      setModalText("You wanted to add an empty item!");
+      toggle();
+
     } else if (movies.find((item) => item.label === body)) {
-      alert("Movie already exists");
+      setModalText("This movie is already in your List!");
+      toggle();
     } else {
       const newItem = {
         label: body,
@@ -58,7 +68,7 @@ export default function App() {
       setMovies([...movies, newItem]);
     }
   };
-
+  
   const onToggleImportant = (id) => {
     const updatedMovies = movies.map((item) => {
       if (item.id === id) {
@@ -83,12 +93,12 @@ export default function App() {
     setMovies(updatedMovies);
   };
 
+
   const searchPost = (movies, term) => {
     //if empty or user deleted term
     if (term.length === 0) {
       return movies;
     }
-
     return movies.filter((item) => {
       return item.label.toLowerCase().includes(term);
       //return item.label.indexOf(term) > -1 does not work with lowerCase
@@ -116,7 +126,6 @@ export default function App() {
   const liked = movies.filter((item) => item.like).length;
   const watched = movies.filter((item) => !item.important).length;
   const allPosts = movies.length;
-
   const visiblePosts = filterPost(searchPost(movies, term), filter);
 
   return (
@@ -136,8 +145,9 @@ export default function App() {
       <div className="d-flex justify-content-center logoWrapper">
         <img src={CatLogo} alt="logo" className="logoHome" />
       </div>
-      <Catalog onAdd={onAdd} />
-      <Footer />
+      <Catalog onAdd={onAdd}/>
+      <Footer /> 
+      <MyModal modal = {modal} modalText = {modalText} toggle ={toggle}/>
     </div>
   );
 }
