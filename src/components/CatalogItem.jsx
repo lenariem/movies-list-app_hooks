@@ -27,7 +27,7 @@ export default function CatalogItem({poster,title,year,imdbRating,onAdd}) {
                         onMovieAdd(title);
                     }}
                 > 
-                    {isDisabled ? "Added" : "Add to your movie List"}
+                    {isDisabled ? "In your List" : "Add to your movie List"}
                 </button>
             </div>
         </div>

@@ -30,7 +30,7 @@ export default function App() {
       id: randomstring.generate(5),
     },
     {
-      label: "Tenet (new,cinema)",
+      label: "The Dark Knight",
       important: true,
       like: false,
       id: randomstring.generate(5),
@@ -58,6 +58,7 @@ export default function App() {
     } else if (movies.find((item) => item.label === body)) {
       setModalText("This movie is already in your List!");
       toggle();
+
     } else {
       const newItem = {
         label: body,
@@ -66,8 +67,8 @@ export default function App() {
         id: randomstring.generate(5),
       };
       setMovies([...movies, newItem]);
-    }
   };
+}
   
   const onToggleImportant = (id) => {
     const updatedMovies = movies.map((item) => {
@@ -92,7 +93,6 @@ export default function App() {
     });
     setMovies(updatedMovies);
   };
-
 
   const searchPost = (movies, term) => {
     //if empty or user deleted term
@@ -129,6 +129,7 @@ export default function App() {
   const visiblePosts = filterPost(searchPost(movies, term), filter);
 
   return (
+    <>
     <div className="app" id="top">
       <Header liked={liked} watched={watched} allPosts={allPosts} />
       <div className="search-panel d-flex">
@@ -141,13 +142,17 @@ export default function App() {
         onToggleImportant={onToggleImportant}
         onToggleLiked={onToggleLiked}
       />
-      <AddForm onAdd={onAdd} />
+      <AddForm onAdd={onAdd}/>
       <div className="d-flex justify-content-center logoWrapper">
         <img src={CatLogo} alt="logo" className="logoHome" />
       </div>
-      <Catalog onAdd={onAdd}/>
+      <Catalog 
+        onAdd={onAdd} 
+      />
       <Footer /> 
-      <MyModal modal = {modal} modalText = {modalText} toggle ={toggle}/>
     </div>
+    <MyModal modal = {modal} modalText = {modalText} toggle ={toggle}/>
+    </>
   );
 }
+
