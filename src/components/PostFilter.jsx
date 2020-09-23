@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 export default function PostFilter({filter, onFilterSelect}) {
+    
     const buttons = [
         {name: 'all', label: 'All'},
         {name: 'like', label: 'Liked'},
@@ -26,6 +27,6 @@ export default function PostFilter({filter, onFilterSelect}) {
                 {filteredButtons}
             </div>
         </div>
-    )
+    );
 }
 

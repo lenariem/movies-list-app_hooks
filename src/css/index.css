@@ -6,12 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background: #eaf5fc url('../img/cat2.jpg') top 72px left 20px no-repeat; */
   background-color:  #eaf5fc;
-  /* background-image: url('../img/cat2.jpg');
-  background-size: 330px 330px;
-  background-position: 72px 145px;
-  background-repeat: no-repeat; */
 }
 
 code {

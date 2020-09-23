@@ -25,6 +25,7 @@ export default function PostList({ posts, onDelete, onToggleImportant, onToggleL
     return (
         <div>
         <ListGroup className="app-list">{elements}</ListGroup>
+        <p>*to mark as liked click on movie name</p>
         </div>
     );
 }

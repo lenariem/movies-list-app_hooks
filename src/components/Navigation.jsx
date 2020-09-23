@@ -1,6 +1,6 @@
-import React from 'react'
-import {Link} from "react-router-dom"
-import "../css/Navigation.css"
+import React from 'react';
+import {Link} from "react-router-dom";
+import "../css/Navigation.css";
 
 
 export default function Navigation() {
@@ -18,5 +18,5 @@ export default function Navigation() {
                 </li>
             </ul>
         </nav>
-    )
+    );
 }

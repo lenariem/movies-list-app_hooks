@@ -11,8 +11,6 @@ import Catalog from "./Catalog";
 import MyModal from "./Modal"
 import Footer from "./Footer";
 
-
-
 import "../css/App.css";
 
 export default function App() {
@@ -42,7 +40,9 @@ export default function App() {
   const [filter, setFilter] = useState("all");
 
   const [modal, setModal] = useState(false);
+  
   const [modalText, setModalText] = useState();
+  
   const toggle = () => setModal(!modal);
 
   const onDelete = (id) => {
@@ -101,7 +101,6 @@ export default function App() {
     }
     return movies.filter((item) => {
       return item.label.toLowerCase().includes(term);
-      //return item.label.indexOf(term) > -1 does not work with lowerCase
     });
   };
 
@@ -129,12 +128,18 @@ export default function App() {
   const visiblePosts = filterPost(searchPost(movies, term), filter);
 
   return (
-    <>
     <div className="app" id="top">
-      <Header liked={liked} watched={watched} allPosts={allPosts} />
+      <Header 
+        liked={liked}
+        watched={watched} 
+        allPosts={allPosts} 
+      />
       <div className="search-panel d-flex">
         <SearchPanel onUpdateSearch={onUpdateSearch} />
-        <PostFilter filter={filter} onFilterSelect={onFilterSelect} />
+        <PostFilter 
+          filter={filter} 
+          onFilterSelect={onFilterSelect} 
+        />
       </div>
       <PostList
         posts={visiblePosts}
@@ -146,13 +151,10 @@ export default function App() {
       <div className="d-flex justify-content-center logoWrapper">
         <img src={CatLogo} alt="logo" className="logoHome" />
       </div>
-      <Catalog 
-        onAdd={onAdd} 
-      />
+      <Catalog onAdd={onAdd} />
       <Footer /> 
+      <MyModal modal = {modal} modalText = {modalText} toggle ={toggle}/>
     </div>
-    <MyModal modal = {modal} modalText = {modalText} toggle ={toggle}/>
-    </>
   );
 }
 

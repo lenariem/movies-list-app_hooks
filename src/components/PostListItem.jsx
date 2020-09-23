@@ -14,23 +14,22 @@ export default function PostListItem({label,onDelete, onToggleImportant, onToggl
 
     return (
         <div className={classNames}>
-        <span className="app-list-item-label" onClick={onToggleLiked}>
-            {label}
-        </span>
-        <div className="d-flex justify-content-center align-items-center">
-            <button
-            type="button"
-            className="btn-star btn-sm"
-            onClick={onToggleImportant}
-            >
-            <i className ="fa fa-check-square-o" aria-hidden="true"></i>
-            {/* <i className="fa fa-star"></i> */}
-            </button>
-            <button type="button" className="btn-trash btn-sm" onClick={onDelete}>
-            <i className="fa fa-trash-o"></i>
-            </button>
-            <i className="fa fa-heart"></i>
-        </div>
+            <span className="app-list-item-label" onClick={onToggleLiked}>
+                {label}
+            </span>
+            <div className="d-flex justify-content-center align-items-center">
+                <button
+                    type="button"
+                    className="btn-star btn-sm"
+                    onClick={onToggleImportant}
+                >
+                    <i className ="fa fa-check-square-o" aria-hidden="true"></i>
+                </button>
+                <button type="button" className="btn-trash btn-sm" onClick={onDelete}>
+                    <i className="fa fa-trash-o"></i>
+                </button>
+                <i className="fa fa-heart"></i>
+            </div>
         </div>
     );
 }
