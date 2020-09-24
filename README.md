@@ -1,4 +1,4 @@
-## git add .App is written on React with using hooks 
+#### App is written on React with using hooks 
 
 ### In this application user can manage list of movies, which he is going to watch. 
 
