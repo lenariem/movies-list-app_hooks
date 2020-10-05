@@ -11,6 +11,7 @@ export default function Catalog({ onAdd }) {
                 title={item.title}
                 poster={item.poster}
                 year={item.year}
+                genres={item.genres}
                 imdbRating={item.imdbRating}
                 onAdd={onAdd}
             />

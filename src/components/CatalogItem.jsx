@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function CatalogItem({ poster,title,year,imdbRating,onAdd }) {
+export default function CatalogItem({ poster,title,year,genres,imdbRating,onAdd }) {
     
     const [isDisabled, setIsDisabled] = useState(false);
 
@@ -8,6 +8,11 @@ export default function CatalogItem({ poster,title,year,imdbRating,onAdd }) {
         onAdd(title);
         setIsDisabled(true);
     };
+
+    let genresFormatted;
+    if(genres) {
+        genresFormatted = genres.join(", ");
+    }
 
     return (
         <div className="card" style={{ padding: "2%" }}>
@@ -20,6 +25,7 @@ export default function CatalogItem({ poster,title,year,imdbRating,onAdd }) {
             <div className="card-body">
                 <h3 className="card-title text-center">{title}</h3>
                 <p className="card-text font-italic">Release year: {year}</p>
+                <p className="card-text font-italic" style={genresFormatted ? {} : {visibility: "hidden"}}>Genres: {genresFormatted}</p>
                 <p className="card-text font-italic">imdbRating: {imdbRating}</p>
                 <button
                     className="btn btn-secondary btn-lg btn-block"
